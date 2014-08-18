@@ -10,11 +10,11 @@ var sequelize = new Sequelize("chatter", "root", "");
 
 /* first define the data structure by giving property names and datatypes
  * See http://sequelizejs.com for other datatypes you can use besides STRING. */
-var User = sequelize.define('User', {
+var User = sequelize.define('users', {
   username: Sequelize.STRING
 });
 
-var Message = sequelize.define('Message' {
+var Message = sequelize.define('message' {
   userid: Sequelize.INTEGER,
   text: Sequelize.STRING,
   roomname: Sequelize.STRING
@@ -34,7 +34,7 @@ User.sync().success(function() {
     // Retrieve objects from the database:
     User.findAll({ where: {username: "Jean Valjean"} }).success(function(usrs) {
       // This function is called back with an array of matches.
-      for (var i = 0; i < usrs.length; i++) {
+      for (var i = 0; i < users.length; i++) {
         console.log(usrs[i].username + " exists");
       }
     });
